@@ -59,9 +59,24 @@ Example:
 
 ```
 PORT=5000
-MONGO_URI=your_mongodb_connection
-CLOUDINARY_URL=your_cloudinary_url
+MONGO_URI=mongodb://localhost:27017/prognosisDB
+JWT_SECRET=your_jwt_secret
+
+CLIENT_URL=http://localhost:5173
+RESET_TOKEN_EXPIRE=10m
+VERIFY_TOKEN_EXPIRE=10m
+
+EMAIL_USER=your_email@gmail.com
+EMAIL_PASS=your_app_password
+
+ML_SERVICE_URL=http://127.0.0.1:8001
+
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
 ```
+
+---
 
 ### Run backend
 
@@ -140,7 +155,7 @@ python -m uvicorn main:app --reload --port 8001
 
 ## 🌐 ML Service URL
 
-```text
+```
 http://localhost:8001
 ```
 
@@ -173,18 +188,17 @@ $env:TF_ENABLE_ONEDNN_OPTS=0
 * `run.txt` contains the exact commands required to start ML service
 * Always run environment variable command before starting server
 
-
 ---
 
 # 🔗 Running Full System
 
 Make sure all 3 are running:
 
-| Service  | Command        |
-| -------- | -------------- |
-| Backend  | npm run dev    |
-| Frontend | npm run dev    |
-| ML       | python main.py |
+| Service  | Command                                         |
+| -------- | ----------------------------------------------- |
+| Backend  | npm run dev                                     |
+| Frontend | npm run dev                                     |
+| ML       | python -m uvicorn main:app --reload --port 8001 |
 
 ---
 
