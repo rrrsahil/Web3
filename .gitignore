@@ -1,0 +1,30 @@
+# Node
+node_modules/
+
+# Env files
+.env
+
+# Python
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+
+# Uploads (correct path)
+Backend/uploads/*
+!Backend/uploads/.gitkeep
+
+# Build files
+dist/
+build/
+
+# OS
+.DS_Store
+
+# ML Models (IMPORTANT)
+ML_Service/saved_models/*
+ML_Service/saved_property_models/*
+
+!ML_Service/saved_models/.gitkeep
+!ML_Service/saved_property_models/.gitkeep
